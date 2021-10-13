@@ -15,6 +15,7 @@ const quotes = [
     quote: `"I'm ready, I'm ready"`,
     source: `Spongebob Squarepants`,
     citation: `Spongebob Squarepants`,
+    tags: [`humor`],
   },
   {
     quote: `"Mein Führer, I can walk!"`,
@@ -26,6 +27,7 @@ const quotes = [
     quote: `"Llama, llama, llama!"`,
     source: `Carl Wheezer`,
     citation: `Jimmy Neutron: Boy Genius`,
+    tags: [`humor`, `politics`],
   },
   {
     quote: `"A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools."`,
@@ -64,6 +66,11 @@ const printQuote = function () {
   }
   if (quote.year) {
     html += `<span class="year">${quote.year}</span>`;
+  }
+  if (quote.tags) {
+    for (let i = 0; i < quote.tags.length; i++) {
+      html += `<span class="tags">${quote.tags[i]}</span>`;
+    }
   }
   html += `</p>`;
   document.getElementById("quote-box").innerHTML = html;
