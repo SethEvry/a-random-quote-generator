@@ -50,7 +50,21 @@ const getRandomQuote = function () {
 /***
  * `printQuote` function
  ***/
-
+const printQuote = function () {
+  const quote = getRandomQuote();
+  let html = `
+    <p class="quote">${quote.quote}</p>
+    <p class="source">${quote.source}  
+  `;
+  if (quote.citation) {
+    html += `<span class="citation">${quote.citation}</span>`;
+  }
+  if (quote.year) {
+    html += `<span class="year">${quote.year}</span>`;
+  }
+  html += `</p>`;
+  document.getElementById("quote-box").innerHTML = html;
+};
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
