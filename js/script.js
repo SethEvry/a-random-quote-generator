@@ -40,6 +40,30 @@ const quotes = [
     source: `Steven Wright`,
   },
 ];
+/**
+ * Creates a random number based on a given max value
+ *
+ */
+const getRandomNumber = function (max) {
+  return Math.floor(Math.random() * max);
+};
+/**
+ * Gets random RGB color and sets the background to it
+ *
+ */
+const getRandomColor = function () {
+  let i = 0;
+  let colors = [];
+  const body = document.querySelector("body");
+  while (i < 3) {
+    colors.push(getRandomNumber(256));
+    i++;
+  }
+  body.setAttribute(
+    "style",
+    `background-color: rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`
+  );
+};
 
 /***
  * Retrieves a random quote object from a quotes array.
@@ -47,13 +71,13 @@ const quotes = [
  *
  ***/
 const getRandomQuote = function () {
-  let randomNumber = Math.floor(Math.random() * quotes.length);
+  let randomNumber = getRandomNumber(quotes.length);
   return quotes[randomNumber];
 };
 
 /***
  * Uses getRandomQuote() then separates the values of the retrieved object into HTML elements.
- *
+ * Also calls the random color function
  ***/
 const printQuote = function () {
   const quote = getRandomQuote();
@@ -74,6 +98,7 @@ const printQuote = function () {
   }
   html += `</p>`;
   document.getElementById("quote-box").innerHTML = html;
+  getRandomColor();
 };
 /***
  * click event listener for the print quote button
