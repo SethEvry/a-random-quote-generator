@@ -40,7 +40,9 @@ const quotes = [
 ];
 
 /***
- * `getRandomQuote` function
+ * Retrieves a random quote object from a quotes array.
+ *
+ *
  ***/
 const getRandomQuote = function () {
   let randomNumber = Math.floor(Math.random() * quotes.length);
@@ -48,7 +50,8 @@ const getRandomQuote = function () {
 };
 
 /***
- * `printQuote` function
+ * Uses getRandomQuote() then separates the values of the retrieved object into HTML elements.
+ *
  ***/
 const printQuote = function () {
   const quote = getRandomQuote();
