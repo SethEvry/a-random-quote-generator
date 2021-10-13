@@ -12,7 +12,7 @@ project 1 - A Random Quote Generator
  ***/
 const quotes = [
   {
-    quote: `"I'm ready, I'm ready"`,
+    quote: `"I'm ready, I'm ready."`,
     source: `Spongebob Squarepants`,
     citation: `Spongebob Squarepants`,
     tags: [`humor`],
@@ -36,7 +36,7 @@ const quotes = [
     year: 1979,
   },
   {
-    quote: `"I live on a one-way street that's also a dead end. I'm not sure how I got there"`,
+    quote: `"I live on a one-way street that's also a dead end. I'm not sure how I got there."`,
     source: `Steven Wright`,
   },
 ];
