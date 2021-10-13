@@ -40,6 +40,8 @@ const quotes = [
     source: `Steven Wright`,
   },
 ];
+//Interval variable
+let intervalID;
 /**
  * Creates a random number based on a given max value
  *
@@ -92,21 +94,28 @@ const printQuote = function () {
     html += `<span class="year">${quote.year}</span>`;
   }
   if (quote.tags) {
-    for (let i = 0; i < quote.tags.length; i++) {
-      html += `<span class="tags">${quote.tags[i]}</span>`;
-    }
+    let tagz = quote.tags.join(", ");
+    html += `<span class = "tags">${tagz}</span>`;
   }
   html += `</p>`;
   document.getElementById("quote-box").innerHTML = html;
   getRandomColor();
+  //Restart bg rotation
+  clearInterval(intervalID);
+  intervalID = null;
+  backgroundInterval();
 };
 /**
  *  setInterval function to change quote periodically
  *
  */
-
-let intervalID = setInterval(printQuote, 10000);
-
+const backgroundInterval = function () {
+  if (!intervalID) {
+    intervalID = setInterval(printQuote, 10000);
+  }
+};
+// First backgroundInterval call
+backgroundInterval();
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
