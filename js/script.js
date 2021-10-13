@@ -18,7 +18,7 @@ const quotes = [
   },
   {
     quote: `"Mein Führer, I can walk!"`,
-    source: `"Dr. Strangelove`,
+    source: `Dr. Strangelove`,
     citation: `Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb`,
     year: 1964,
   },
